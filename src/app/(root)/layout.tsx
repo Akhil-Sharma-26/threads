@@ -1,3 +1,4 @@
+"use client";
 import { ClerkProvider } from '@clerk/nextjs'
 import '../globals.css'
 import type { Metadata } from 'next'
@@ -6,7 +7,10 @@ import NavBar from '@/components/shared/NavBar'
 import LeftSideBar from '@/components/shared/LeftSideBar'
 import RightSideBar from '@/components/shared/RightSidrBar'
 import BottomBar from '@/components/shared/BottomBar'
-
+import Loading from './loading'
+import { use, useState } from 'react'
+import { useEffect } from 'react'
+import React from 'react';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata={
@@ -20,6 +24,23 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // const loading=false;
+  // useEffect(()=>{
+  //   const html=document.querySelector('html');
+  //   if(html){
+  //     html.classList.add(inter.className);
+  //   }
+  //   return ()=>{
+  //     if(html){
+  //       html.classList.remove(inter.className);
+  //     }
+  //   }
+  // },[])
+  const [loading,setLoading]=React.useState(true);
+  if(loading){
+    return <Loading/>
+  }
+  else{
   return (
     <ClerkProvider>
       <html>
@@ -38,5 +59,5 @@ export default function RootLayout({
         </body>
       </html>
     </ClerkProvider>
-  )
+  )}
 }
