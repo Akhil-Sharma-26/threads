@@ -38,6 +38,9 @@ export default function LeftSideBar(){
                         </SignOutButton>
                     </SignedIn>
             </div>
+            <div>
+                <p className="text-light-2 text-center text-xs">© 2021 Camp Aurora. All rights reserved.</p>
+            </div>
         </section>
     )
 }
