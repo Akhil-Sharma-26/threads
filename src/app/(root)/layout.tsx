@@ -38,6 +38,7 @@ export default function RootLayout({
   // },[])
   const [loading,setLoading]=React.useState(true);
   if(loading){
+    
     return <Loading/>
   }
   else{
