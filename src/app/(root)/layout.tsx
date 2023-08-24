@@ -36,12 +36,6 @@ export default function RootLayout({
   //     }
   //   }
   // },[])
-  const [loading,setLoading]=React.useState(true);
-  if(loading){
-    
-    return <Loading/>
-  }
-  else{
   return (
     <ClerkProvider>
       <html>
@@ -60,5 +54,5 @@ export default function RootLayout({
         </body>
       </html>
     </ClerkProvider>
-  )}
+  )
 }
